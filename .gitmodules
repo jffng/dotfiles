@@ -1,3 +1,30 @@
 [submodule "bundle/colorschemes"]
 	path = bundle/colorschemes
 	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "bundle/auto-pairs"]
+	path = bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git 
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git 
+[submodule "bundle/solarized"]
+	path = bundle/solarized
+	url = https://github.com/vim-scripts/Solarized.git 
+[submodule "bundle/vim-colors-solarized"]
+    path = bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git 
+[submodule "bundle/vim-commentary"]
+	path = bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git 
+[submodule "bundle/vim-javascript"]
+	path = bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git 
+[submodule "bundle/vim-json"]
+	path = bundle/vim-json
+	url = https://github.com/elzr/vim-json.git 
+[submodule "bundle/vim-less"]
+	path = bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git 
+[submodule "bundle/vim-sensible"]
+	path = bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git 
