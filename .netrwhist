@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/jeffrey.ong/Documents/BNY/corpwebsite/.git'
-let g:netrw_dirhist_2='/Users/jeffrey.ong/Documents/BNY/corpwebsite/.git/hooks'
-let g:netrw_dirhist_3='/Users/jeffrey.ong/Documents/BNY/corpwebsite/.git'
-let g:netrw_dirhist_4='/Users/jeffrey.ong/.vim'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/jeffrey.ong/Documents/DTELEKOM/car-base/zombie_car'
+let g:netrw_dirhist_2='/Users/jeffrey.ong/Documents/DTELEKOM/car-base'
+let g:netrw_dirhist_3='/Users/jeffrey.ong/Documents/DTELEKOM/car-base/cars-base-screen'
+let g:netrw_dirhist_4='/Users/jeffrey.ong/Documents/DTELEKOM/car-base/conf'
+let g:netrw_dirhist_5='/Users/jeffrey.ong/Documents/DTELEKOM/car-base/scripts'
+let g:netrw_dirhist_6='/Users/jeffrey.ong/Documents/DEV/SKETCH/classdump'

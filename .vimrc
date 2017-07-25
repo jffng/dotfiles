@@ -40,36 +40,33 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-N> :NERDTreeToggle<CR>
 
-" closetag script
-" let g:closetag_html_style=1
-" source ~/.vim/scripts/closetag.vim
-" if !exists("b:unaryTagsStack") || exists("b:closetag_html_style")
-"   if &filetype == "html" || exists("b:closetag_html_style")
-"     let b:unaryTagsStacktack="area base br dd dt hr img input link meta param"
-"   else " for xml and xsl
-"     let b:unaryTagsStack=""
-"   endif
-" endif
-" if !exists("b:unaryTagsStack")
-"   let b:unaryTagsStack=""
-" endif
-
 "SEARCHING----------
 set path=$PWD/**
 
 " The Silver Searcher
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrlp_use_caching = 0
-endif
+" if executable('ag')
+"   set grepprg=ag\ --nogroup\ --nocolor
+"   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+"   let g:ctrlp_use_caching = 0
+" endif
 
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
+" command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Find<SPACE>
 
 " system clipboard bindings
 set clipboard=unnamed
+
+" Specify a directory for plugins
+" " - For Neovim: ~/.local/share/nvim/plugged
+" " - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
