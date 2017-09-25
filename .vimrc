@@ -7,7 +7,6 @@ set ignorecase "Ignore case in search
 set number "turn on line numbers
 set pastetoggle=<F5> "remap F5 to paste mode
 set showmatch "Highlights matching brackets in programming languages
-set autoindent  "If you're indented, new lines will also be indented
 set smartindent  "Automatically indents lines after opening a bracket in programming languages
 set backspace=2  "This makes the backspace key function like it does in other programs.
 
@@ -25,11 +24,11 @@ vnoremap > >gv
 let mapleader = ","
 
 "TABBING---------
-set tabstop=4  "How much space Vim gives to a tab
-set softtabstop=4 " number of spaces in tab when editing
+set tabstop=2  "How much space Vim gives to a tab
+set softtabstop=2 " number of spaces in tab when editing
 set smarttab "Improves tabbing
 set expandtab " tabs are spaces
-set shiftwidth=4  "Assists code formatting
+set shiftwidth=2  "Assists code formatting
 
 "STATUS LINE--------
 set laststatus=2
@@ -95,6 +94,8 @@ nnoremap \ :Find<SPACE>
 
 "set the yank to the system clipboard as well, comment out if strange behavior
 set clipboard=unnamed
+
+set incsearch
 
 
 """"""""""""""""""""""""""""""""""""""
