@@ -10,6 +10,25 @@ set showmatch "Highlights matching brackets in programming languages
 set smartindent  "Automatically indents lines after opening a bracket in programming languages
 set backspace=2  "This makes the backspace key function like it does in other programs.
 
+"SYNTASTIC -------
+map <silent> <Leader>e :Errors<CR>
+map <Leader>s :SyntasticToggleMode<CR>
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_quiet_messages = { "type": "style" }
+let g:syntastic_ocaml_checkers = ['merlin']
+let g:syntastic_javascript_checkers = ['eslint'] 
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+
 " color scheme
 syntax on
 set background=dark
@@ -50,6 +69,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-N> :NERDTreeToggle<CR>
 
+
 "BETTER-JAVASCRIPT-COMPLETION -------------
 let g:vimjs#casesensistive = 1
 " Enabled by default. flip the value to make completion matches case insensitive
@@ -64,26 +84,6 @@ let g:vimjs#chromeapis = 0
 let g:javascript_plugin_jsdoc = 1
 " enables syntax highlighting for JSDOC
 
-"SYNTASTIC -------
-map <silent> <Leader>e :Errors<CR>
-map <Leader>s :SyntasticToggleMode<CR>
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_quiet_messages = { "type": "style" }
-let g:syntastic_ocaml_checkers = ['merlin']
-let g:syntastic_javascript_checkers = ['eslint'] 
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-
-
 "SEARCHING----------
 set path=$PWD/**
 " bind K to grep word under cursor
@@ -96,7 +96,6 @@ nnoremap \ :Find<SPACE>
 set clipboard=unnamed
 
 set incsearch
-
 
 """"""""""""""""""""""""""""""""""""""
 " LOCATION LIST AND QUICKFIX WINDOWS "
