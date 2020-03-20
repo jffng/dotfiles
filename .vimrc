@@ -32,8 +32,8 @@ let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 " color scheme
 syntax on
 set background=dark
-let g:solarized_termtrans = 1
-colorscheme solarized
+" let g:solarized_termtrans = 1
+" colorscheme solarized
 
 " keep visual selection when indenting/outdenting
 vnoremap < <gv
@@ -68,7 +68,6 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-N> :NERDTreeToggle<CR>
-
 
 "BETTER-JAVASCRIPT-COMPLETION -------------
 let g:vimjs#casesensistive = 1
